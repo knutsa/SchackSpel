@@ -377,13 +377,13 @@ def main(opp = None):
                         player.begin_move((x,y), grid)
         clock.tick(20)
 
-os.chdir('/Users/Knut/.vscode/Python/Schack/pjaser')
+os.chdir('./pjaser')
 global_grid = [[Ruta() for i in range(8)] for j in range(8)]
 for i in range(0,8):
-    list_adress_p1, list_adress_p2 = glob.glob("*"+pjas_namn[i]+"_V*"), glob.glob("*"+pjas_namn[i]+"_S*")
+    list_adress_p1, list_adress_p2 = glob.glob("*"+pjas_namn[i]+"_v*"), glob.glob("*"+pjas_namn[i]+"_s*")
     p1 = Pjas(list_adress_p1[0], (i,0), pjas_namn[i], global_grid) 
     p2 = Pjas(list_adress_p2[0], (i,7), pjas_namn[i], global_grid)
-    bonde1, bonde2 = Pjas(glob.glob("*bonde_V*")[0], (i,1), "bonde_v", global_grid), Pjas(glob.glob("*bonde_S*")[0], (i,6), "bonde_s", global_grid)
+    bonde1, bonde2 = Pjas(glob.glob("*bonde_v*")[0], (i,1), "bonde_v", global_grid), Pjas(glob.glob("*bonde_s*")[0], (i,6), "bonde_s", global_grid)
     vita.extend([p1, bonde1])
     svarta.extend([p2, bonde2])
 
